@@ -1,35 +1,69 @@
-body{
-  margin: 0px;
+div.wrapper {
   min-height: 100%;
+  margin: 0;
 
 }
+
 header{
   top: 0px;
   position: sticky;
   height: 120px;
   width: 100%;
-  background-color: #47494f;
+  background-color: #fee8ea;
 }
 main{
   min-height: 100%;
   margin: 0px;
+
+
 }
-footer{
+
+
+.naslov{
+  font-weight: 800;
   position: absolute;
-  bottom: 0px;
-  width: 100%;
-  height: 150px;
-  background-color: #47494f;
-  margin: 0px;
+  left: 820px;
+  padding-top: 30px;
 }
-.logo_ime{
-  height: 100px;
-  width: 400px;
+
+
+/* footer */
+footer{
+
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  height:150px;
+  background-color: #fee8ea;
 }
+
+.footer_logo{
+  display: flex;
+  margin-left: 46%;
+  margin-right: auto;
+  height: 110px;
+}
+.kopirajt{
+  padding-top: 0;
+  margin-left: 48%;
+}
+
+
+/* dugmat */
+
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #8064A2 !important;
+}
+
+
+
 .logo{
   padding-left: 30px;
-  padding-bottom: 10px;;
-  height: 110px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  height: 100px;
 }
 .ime{
   color: white;
@@ -51,42 +85,65 @@ footer{
   top: 30px;
   right: 30px;
   float: right;
-  background:url(/images/o_nama_dugme.png) no-repeat;
-  height: 45px;
-  width: 144px;
+  margin: 5px;
+
 }
+.svi_artikli_dugme:hover{
+  opacity: 50%;
+  transition: 0.2s ease-out;
+}
+.svi_artikli_dugme{
+  cursor: pointer;
+  border: none;
+  position: relative;
+  top: 30px;
+  right: 30px;
+  float: right;
+  margin: 5px;
+}
+.create_dugme:hover{
+  opacity: 50%;
+  transition: 0.2s ease-out;
+}
+.create_dugme{
+  cursor: pointer;
+  border: none;
+  position: relative;
+  top: 30px;
+  right: 30px;
+  float: right;
+  margin: 5px;
+}
+.pocetna_dugme:hover{
+  opacity: 50%;
+  transition: 0.2s ease-out;
+}
+
 .kontakt_dugme:hover{
   opacity: 50%;
   transition: 0.2s ease-out;
 }
 .kontakt_dugme{
-  border-radius: 4px;
   cursor: pointer;
   border: none;
   position: relative;
   top: 30px;
-  right: 15px;
+  right: 30px;
   float: right;
-  background:url(/images/kontakt.png) no-repeat;
-  height: 45px;
-  width: 144px;
+  margin: 5px;
 }
-.pocetna_dugme:enabled{
+.pocetna_dugme:hover{
   opacity: 50%;
-}
-.pocetna_dugme:active{
-  opacity: 50%;
+  transition: 0.2s ease-out;
 }
 .pocetna_dugme{
   cursor: pointer;
   border: none;
   position: relative;
   top: 30px;
-  right: 45px;
+  right: 30px;
   float: right;
-  background:url(/images/pocetna.png) no-repeat;
-  height: 45px;
-  width: 144px;
+  margin: 5px;
 }
 .wood_tekst{
   position: relative;
@@ -115,31 +172,98 @@ footer{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.footer_logo{
-  position: absolute;
-  left: 48%;
-  height: 110px;
+.main-content {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 150px;
 }
 
-.kopirajt{
-  margin: 0px;
-  position: absolute;
-  top: 120px;
-  left: 45%;
+
+
+
+
+.form-group{
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.napravi_artikal_title{
+  text-align: center;
+  margin: 10px;
+  font-weight: bolder;
+}
+.uredi_artikal_title{
+  text-align: center;
+  margin: 10px;
+  font-weight: bolder;
+}
+
+.artikli_title{
+  text-align: center;
+  margin: 10px;
+  font-weight: bolder;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc_name{
+  font-weight: bold;
+  color: black;
+  padding: 15px;
+  text-align: center;
+}
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  padding-top: 20px;
+  margin-left: 290px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+
+.table{
+  margin: auto;
 }
