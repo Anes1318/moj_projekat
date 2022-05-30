@@ -6,14 +6,16 @@
     <title>Pocetna</title>
 
     <!-- links -->
-    <link rel="stylesheet" href="{{asset('css/pocetna.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    @yield('links')
   </head>
   <body>
+    <div id="page-container">
       <header>
         <nav>
           <div class="navigejsn">
@@ -47,19 +49,17 @@
         </nav>
       </header>
       <main>
-        <div class="wrapper">
-
-
+        <div class="content-container">
         <img class="wood" src="{{asset('images/sajt/wood.png')}}" alt="wood">
-          @yield('content')
 
-
+            @yield('content')
         </div>
       </main>
       <footer>
           <div class="footer-container">
             <img class="footer_logo" src="{{asset('images/sajt/ca_logo.png')}}" alt="LOGO">
-            <p class="kopirajt">Copyright © 2022 IWOOD, Inc.</p>
+
+
           </div>
       </footer>
     </div>

@@ -1,210 +1,3 @@
-div.wrapper {
-  min-height: 100%;
-  margin: 0;
-
-}
-
-header{
-  top: 0px;
-  position: sticky;
-  height: 120px;
-  width: 100%;
-  background-color: #fee8ea;
-}
-main{
-  min-height: 100%;
-  margin: 0px;
-
-
-}
-
-
-.naslov{
-  font-weight: 800;
-  position: absolute;
-  left: 820px;
-  padding-top: 30px;
-}
-
-
-/* footer */
-footer{
-
-  position: absolute;
-  bottom: 0;
-  width:100%;
-  height:150px;
-  background-color: #fee8ea;
-}
-
-.footer_logo{
-  display: flex;
-  margin-left: 46%;
-  margin-right: auto;
-  height: 110px;
-}
-.kopirajt{
-  padding-top: 0;
-  margin-left: 48%;
-}
-
-
-/* dugmat */
-
-
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #8064A2 !important;
-}
-
-
-
-.logo{
-  padding-left: 30px;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  height: 100px;
-}
-.ime{
-  color: white;
-  font-weight: bolder;
-  float: right;
-  font-size: 60px;
-  margin: 0px;
-  padding-top: 30px;
-  padding-right: 40px;
-}
-.o_nama_dugme:hover{
-  opacity: 50%;
-  transition: 0.2s ease-out;
-}
-.o_nama_dugme{
-  cursor: pointer;
-  border: none;
-  position: relative;
-  top: 30px;
-  right: 30px;
-  float: right;
-  margin: 5px;
-
-}
-.svi_artikli_dugme:hover{
-  opacity: 50%;
-  transition: 0.2s ease-out;
-}
-.svi_artikli_dugme{
-  cursor: pointer;
-  border: none;
-  position: relative;
-  top: 30px;
-  right: 30px;
-  float: right;
-  margin: 5px;
-}
-.create_dugme:hover{
-  opacity: 50%;
-  transition: 0.2s ease-out;
-}
-.create_dugme{
-  cursor: pointer;
-  border: none;
-  position: relative;
-  top: 30px;
-  right: 30px;
-  float: right;
-  margin: 5px;
-}
-.pocetna_dugme:hover{
-  opacity: 50%;
-  transition: 0.2s ease-out;
-}
-
-.kontakt_dugme:hover{
-  opacity: 50%;
-  transition: 0.2s ease-out;
-}
-.kontakt_dugme{
-  cursor: pointer;
-  border: none;
-  position: relative;
-  top: 30px;
-  right: 30px;
-  float: right;
-  margin: 5px;
-}
-.pocetna_dugme:hover{
-  opacity: 50%;
-  transition: 0.2s ease-out;
-}
-.pocetna_dugme{
-  cursor: pointer;
-  border: none;
-  position: relative;
-  top: 30px;
-  right: 30px;
-  float: right;
-  margin: 5px;
-}
-.wood_tekst{
-  position: relative;
-  text-align: center;
-}
-.wood{
-  width: 100%;
-  height: 300px;
-  margin: 0px;
-}
-
-.card-img-top{
-  margin-top: 50px;
-  height: 100px;
-}
-
-
-.grid{
-  margin: 0px;
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-}
-.slika{
-  margin: 0px;
-}
-
-
-.main-content {
-  position: relative;
-  min-height: 100vh;
-  padding-bottom: 150px;
-}
-
-
-
-
-
-.form-group{
-  max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.napravi_artikal_title{
-  text-align: center;
-  margin: 10px;
-  font-weight: bolder;
-}
-.uredi_artikal_title{
-  text-align: center;
-  margin: 10px;
-  font-weight: bolder;
-}
-
-.artikli_title{
-  text-align: center;
-  margin: 10px;
-  font-weight: bolder;
-}
-
 div.gallery {
   border: 1px solid #ccc;
 }
@@ -233,13 +26,19 @@ div.desc {
   box-sizing: border-box;
 }
 
-.responsive {
+.gallery {
   padding: 0 6px;
   padding-top: 20px;
   margin-left: 290px;
+  margin-bottom: 30px;
   float: left;
   width: 24.99999%;
 }
+/* padding: 0 6px;
+padding-top: 20px;
+margin-left: 290px;
+float: left;
+width: 24.99999%; */
 
 @media only screen and (max-width: 700px) {
   .responsive {
@@ -258,12 +57,4 @@ div.desc {
   content: "";
   display: table;
   clear: both;
-}
-
-
-
-
-
-.table{
-  margin: auto;
 }

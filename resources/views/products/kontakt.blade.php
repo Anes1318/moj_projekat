@@ -1,15 +1,15 @@
 @extends('layouts.main-layout')
 
+@section('links')
+<link rel="stylesheet" href="{{asset('css/kontakt.css')}}">
 
+@endsection
+
+@section('naslov')
+  <h1 class="naslov">KONTAKT</h1>
+@endsection
 
 @section('content')
 
-  <h1>Kontakt</h1>
-
-
-
-  @if(Auth::check())
-    <h1>admin</h1>
-  @endif
 
 @endsection
