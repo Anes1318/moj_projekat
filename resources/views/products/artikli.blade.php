@@ -13,7 +13,7 @@
 @section('content')
 
 
-
+  @if(Auth::check())
     <div class="tabela">
       <table style="width: 80%" class="table table-bordered" id="dataTable" cellspacing="0">
         @if(session('artikal-created-message'))
@@ -71,6 +71,23 @@
         @endif
       </table>
     </div>
+  @else
+  @if($products)
+    @foreach($products as $product)
+
+          <div class="gallery">
+            <div class="slike">
+              <a target="_blank" href="#">
+                <img src="/images/{{$product->photo ? $product->photo : 'plejsholder.png'}}" alt="Forest" width="600" height="400">
+              </a>
+              <div class="desc_name"><h4>{{$product->name}}</h4></div>
+              <div class="desc"><h5>Materijal: {{$product->material}}</h5></div>
+              </div>
+          </div>
+
+    @endforeach
+  @endif
+  @endif
 
 
 @endsection

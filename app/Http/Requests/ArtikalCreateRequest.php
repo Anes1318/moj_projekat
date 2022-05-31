@@ -34,7 +34,7 @@ class ArtikalCreateRequest extends FormRequest
       return [
           'name.required' => 'Morate unijeti ime!',
           'material.required' => 'Morate unijeti material!',
-          'photo.required' => 'Morate unijeti sliku!',
+          'photo.required' => 'Morate izabrati sliku!',
       ];
   }
 }

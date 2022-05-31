@@ -24,11 +24,11 @@
               @csrf
               <button class="btn btn-primary btn-lg" type="submit">Napravi artikal</button>
             </form>
+            @endif
             <form class="svi_artikli_dugme" action="{{route('artikli')}}" method="get">
               @csrf
               <button class="btn btn-primary btn-lg" type="submit">Svi artikli</button>
             </form>
-            @endif
             <form class="o_nama_dugme" action="{{route('o_nama')}}" method="get">
               @csrf
               <button class="btn btn-primary btn-lg" type="submit">O nama</button>
