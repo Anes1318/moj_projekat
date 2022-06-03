@@ -5,33 +5,39 @@
 <title>Uredi</title>
 @endsection
 
-@section('naslov')
 
-  <h1 class="naslov">Uredi artikal</h1>
-@endsection
 
 
 @section('content')
+
+  <img class="slika"height="auto" width="auto" src="/images/{{$product->photo ? $product->photo : 'plejsholder.png'}}" alt="">
 
 
   <div class="forma">
     {!! Form::model($product, ['method' => 'PATCH', 'action' => ['App\Http\Controllers\ProductController@update', $product->id],'files' => true ]) !!}
     <div class="form-group">
+
       {!! Form::label('name', 'Ime:') !!}
       {!! Form::text('name', null, ['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
-      {!! Form::label('meterial', 'Materijal:') !!}
-      {!! Form::text('material', null, ['class'=>'form-control']) !!}
+        {!! Form::label('description', 'Opis:') !!}
+        {!! Form::textarea('description', null, ['class'=>'form-control', 'rows'=>5]) !!}
+    </div>
+    <div class="form-group">
+      {!! Form::label('price', 'Cijena:') !!}
+      {!! Form::number('price', null, ['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('photo', 'Slika:') !!}
       {!! Form::file('photo', ['class'=>'form-control-file']) !!}
     </div>
     <div class="form-group">
-      {!! Form::submit('Uredi artikal', ['class'=>'btn btn-primary']) !!}
+      {!! Form::submit('Uredi artikal', ['class'=>'border border-success btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
+  </div>
+  @include('components.form-errors')
   </div>
 
 

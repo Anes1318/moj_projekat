@@ -30,6 +30,10 @@
                 @csrf
                 <button class="btn btn-primary btn-lg" type="submit">Moji artikli</button>
               </form>
+              <form class="svi_artikli_dugme" action="{{route('viewkorpa')}}" method="get">
+                @csrf
+                <button class="btn btn-primary btn-lg" type="submit">Korpa</button>
+              </form>
               @else
               <form class="create_dugme" action="{{route('login')}}" method="get">
                 @csrf
@@ -46,7 +50,7 @@
           </div>
 
           <div class="logo_ime">
-            <img class="logo" src="{{asset('images/sajt/logo.png')}}" alt="LOGO">
+            <a href="{{route('pocetna')}}"><img class="logo" src="{{asset('images/sajt/logo.png')}}" alt="LOGO"></a>
           </div>
         </nav>
       </header>

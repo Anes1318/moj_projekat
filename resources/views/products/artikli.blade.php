@@ -35,12 +35,12 @@
             <th>Id</th>
             <th>Ime</th>
             <th style="width: 11%">Slika</th>
-            <th>Opis</th>
+            <th style="width: 30%">Opis</th>
             <th>Cijena</th>
             <th style="width: 11%">Datum pravljenja</th>
             <th style="width: 11%">Datum uredjivanja</th>
-            <th style="width: 10%">Izbrisi</th>
-            <th style="width: 10%">Uredi</th>
+            <th style="width: 5%">Izbrisi</th>
+            <th style="width: 5%">Uredi</th>
           </tr>
         </thead>
         <tbody>
@@ -49,7 +49,7 @@
               <td>{{$product->id}}</td>
               <td>{{$product->name}}</td>
               <td><img height="100" width="100%" src="/images/{{$product->photo ? $product->photo : 'plejsholder.png'}}" alt=""></td>
-              <td>{{$product->description}}</td>
+              <td>{{substr($product->description, 0, 60). '...'}}</td>
               <td>{{$product->price}}€</td>
               <td>{{$product->created_at->diffForHumans()}}</td>
               <td>{{$product->updated_at->diffForHumans()}}</td>

@@ -34,6 +34,11 @@ class ProductController extends Controller
     {
       return view('products.kontakt');
     }
+    public function viewkorpa()
+    {
+      
+      return view('products.korpa');
+    }
 
 
     /**
@@ -121,6 +126,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+      if($product)
       $product = Product::findOrFail($id);
       unlink(public_path('\images\\' . $product->photo));
       $product->delete();

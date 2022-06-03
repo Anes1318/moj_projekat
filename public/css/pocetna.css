@@ -1,106 +1,47 @@
-/* text */
-
-
-
-
-
-/* text */
-
-/* GALERIJA */
-/* div.gallery {
+/* galerija */
+div.gallery {
   border: 1px solid #ccc;
 }
 
 div.gallery:hover {
   border: 1px solid #777;
-} */
+}
 
 div.gallery img {
-  width: 50%;
+  width: 100%;
   height: auto;
 }
 
 div.desc_name{
   font-weight: bold;
   color: black;
-  padding: 15px;
+  padding: 5px;
   text-align: center;
 }
-div.desc {
-  padding: 15px;
-  text-align: center;
+div.price {
+  font-size: 3vh;
+  color: #3ce343;
+  padding-left: 30px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* .gallery1 {
-  padding: 5px 10px;
-  margin-top: 10px;
-  margin-right: 100px;
+.gallery {
+  margin-top: 20px;
+  padding: 0 6px;
+  padding-top: 6px;
+  margin-left: 100px;
   margin-bottom: 30px;
-  float: right;
-  width: 50%;
-} */
-.text-container{
-  height: 700px;;
-  display: inline-block;
-  max-width: 50%;
-  font-size: 40px;
-  color: #000000;
-  margin-top: 30px;
-  margin-left: 50px;
+  float: left;
+  width: 15%;
 }
-.text1{
-
-  font-size: 50px;
-  padding-top: 190px;
-}
-.slika1{
-  display: inline-block;
-  margin-left: 40px;
-  width: 30%;
-  float: right;
-  margin-right: 140px;
-  margin-top: 30px;
-  transition: all .1s ease-in-out;
-  border: 2px solid #000000;
-}
-.slika1:hover{
-   transform: scale(1.3);
-}
-.text-container2{
-
-  display: inline-block;
-  max-width: 50%;
-  font-size: 40px;
-  color: #000000;
-  margin-top: 30px;
-  margin-left: 50px;
-}
-.text2{
-
-
-  font-size: 50px;
-  padding-top: 190px;
-}
-.slika2{
-  display: inline-block;
-  margin-left: 40px;
-  width: 30%;
-  float: right;
-  margin-bottom: 30px;
-  margin-right: 140px;
-  margin-top: 30px;
-  transition: all .1s ease-in-out;
-  border: 2px solid #000000;
-}
-.slika2:hover{
-   transform: scale(1.3);
-}
-
-
+/* padding: 0 6px;
+padding-top: 20px;
+margin-left: 290px;
+float: left;
+width: 24.99999%; */
 
 @media only screen and (max-width: 700px) {
   .responsive {
@@ -120,4 +61,10 @@ div.desc {
   display: table;
   clear: both;
 }
-/* GALERIJA */
+/* galerija */
+.dugme_dodaj_korpu{
+  float: right;
+  position: relative;
+  bottom: 35px;
+  margin-right: 15px;
+}
