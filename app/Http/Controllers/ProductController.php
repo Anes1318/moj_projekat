@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArtikalCreateRequest;
 use App\Models\Product;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
@@ -17,10 +19,6 @@ class ProductController extends Controller
     public function index()
     {
       return view('products.index');
-    }
-    public function o_nama()
-    {
-      return view('products.o_nama');
     }
     public function pocetna()
     {
@@ -57,7 +55,10 @@ class ProductController extends Controller
     public function store(ArtikalCreateRequest $request)
     {
       // return $request;
+      $user = Auth::user();
+      // return $user;
       $input = $request->all();
+      $input['user_id'] = $user->id;
       $file = $request->photo;
       $name = $file->getClientOriginalName();
       $file->move('images', $name);

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="Anesov super vebsajt" content="Malo sutra">
-    <title>Pocetna</title>
+
 
     <!-- links -->
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
@@ -18,46 +18,47 @@
     <div id="page-container">
       <header>
         <nav>
+
           <div class="navigejsn">
-            @if(Auth::check())
-            <form class="create_dugme" action="{{route('products.create')}}" method="get">
-              @csrf
-              <button class="btn btn-primary btn-lg" type="submit">Napravi artikal</button>
-            </form>
-            @endif
-            <form class="svi_artikli_dugme" action="{{route('artikli')}}" method="get">
-              @csrf
-              <button class="btn btn-primary btn-lg" type="submit">Svi artikli</button>
-            </form>
-            <form class="o_nama_dugme" action="{{route('o_nama')}}" method="get">
-              @csrf
-              <button class="btn btn-primary btn-lg" type="submit">O nama</button>
-            </form>
-            <form class="kontakt_dugme" action="{{route('kontakt')}}" method="get">
-              @csrf
-              <button class="btn btn-primary btn-lg" type="submit">Kontakt</button>
-            </form>
-            <form class="pocetna_dugme" action="{{route('pocetna')}}" method="get">
-              @csrf
-              <button class="btn btn-primary btn-lg" type="submit">Pocetna</button>
-            </form>
+            <div class="dugmad">
+              @if(Auth::check())
+              <form class="create_dugme" action="{{route('products.create')}}" method="get">
+                @csrf
+                <button class="btn btn-primary btn-lg" type="submit">Napravi artikal</button>
+              </form>
+              <form class="svi_artikli_dugme" action="{{route('artikli')}}" method="get">
+                @csrf
+                <button class="btn btn-primary btn-lg" type="submit">Moji artikli</button>
+              </form>
+              @else
+              <form class="create_dugme" action="{{route('login')}}" method="get">
+                @csrf
+                <button class="btn btn-primary btn-lg" type="submit">Login</button>
+              </form>
+              @endif
+              <form class="pocetna_dugme" action="{{route('pocetna')}}" method="get">
+                @csrf
+                <button class="btn btn-primary btn-lg" type="submit">Pocetna</button>
+              </form>
+
+            </div>
+
           </div>
-              @yield('naslov')
+
           <div class="logo_ime">
-            <img class="logo" src="{{asset('images/sajt/ca_logo.png')}}" alt="LOGO">
+            <img class="logo" src="{{asset('images/sajt/logo.png')}}" alt="LOGO">
           </div>
         </nav>
       </header>
       <main>
         <div class="content-container">
-        <img class="wood" src="{{asset('images/sajt/wood.png')}}" alt="wood">
 
-            @yield('content')
+          @yield('content')
         </div>
       </main>
       <footer>
           <div class="footer-container">
-            <img class="footer_logo" src="{{asset('images/sajt/ca_logo.png')}}" alt="LOGO">
+            <img class="footer_logo" src="{{asset('images/sajt/logo.png')}}" alt="LOGO">
 
 
           </div>

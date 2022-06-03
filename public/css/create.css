@@ -7,3 +7,9 @@
 .forma{
   margin-top: 50px;
 }
+#erori{
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}

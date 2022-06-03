@@ -2,12 +2,12 @@
 
 @section('links')
 <link rel="stylesheet" href="{{asset('css/artikli.css')}}">
-
+<title>Artikli</title>
 @endsection
 
 @section('naslov')
 
-  <h1 class="naslov">Artikli</h1>
+  <h1 class="naslov">ARTIKLI</h1>
 @endsection
 
 @section('content')
@@ -35,8 +35,9 @@
             <th>Id</th>
             <th>Ime</th>
             <th style="width: 11%">Slika</th>
-            <th style="width: 11%">Materijal</th>
-            <th style="width: 11%" >Datum pravljenja</th>
+            <th>Opis</th>
+            <th>Cijena</th>
+            <th style="width: 11%">Datum pravljenja</th>
             <th style="width: 11%">Datum uredjivanja</th>
             <th style="width: 10%">Izbrisi</th>
             <th style="width: 10%">Uredi</th>
@@ -48,7 +49,8 @@
               <td>{{$product->id}}</td>
               <td>{{$product->name}}</td>
               <td><img height="100" width="100%" src="/images/{{$product->photo ? $product->photo : 'plejsholder.png'}}" alt=""></td>
-              <td>{{$product->material}}</td>
+              <td>{{$product->description}}</td>
+              <td>{{$product->price}}€</td>
               <td>{{$product->created_at->diffForHumans()}}</td>
               <td>{{$product->updated_at->diffForHumans()}}</td>
               <td>

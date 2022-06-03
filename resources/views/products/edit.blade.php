@@ -2,7 +2,7 @@
 
 @section('links')
 <link rel="stylesheet" href="{{asset('css/edit.css')}}">
-
+<title>Uredi</title>
 @endsection
 
 @section('naslov')

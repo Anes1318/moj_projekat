@@ -25,16 +25,18 @@ class ArtikalCreateRequest extends FormRequest
     {
         return [
           'name' => 'required',
-          'material' => 'required',
+          'description' => 'required',
+          'price' => 'required',
           'photo' => 'required',
         ];
     }
     public function messages()
-  {
-      return [
-          'name.required' => 'Morate unijeti ime!',
-          'material.required' => 'Morate unijeti material!',
-          'photo.required' => 'Morate izabrati sliku!',
-      ];
-  }
+    {
+        return [
+            'name.required' => 'Morate unijeti ime!',
+            'description.required' => 'Morate unijeti opis!',
+            'price.required' => 'Morate unijeti cijenu!',
+            'photo.required' => 'Morate izabrati sliku!',
+        ];
+    }
 }

@@ -48,4 +48,14 @@ class User extends Authenticatable
       }
       return false;
     }
+
+    public function products()
+    {
+      return $this->hasMany('App\Models\Product');
+    }
+
+    public function roles()
+    {
+      return $this->hasOne('App\Models\Role');
+    }
 }
