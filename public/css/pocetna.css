@@ -68,3 +68,11 @@ width: 24.99999%; */
   bottom: 35px;
   margin-right: 15px;
 }
+.sesija{
+  position: relative;
+}
+.dodajkorpa_session_dugme{
+  position: absolute;
+  bottom: 5px;
+  left: 12vw;
+}

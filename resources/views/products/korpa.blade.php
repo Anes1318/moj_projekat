@@ -1,8 +1,8 @@
 @extends('layouts.main-layout')
 
 @section('links')
-<link rel="stylesheet" href="{{asset('css/pocetna.css')}}">
-<title>Početna</title>
+<link rel="stylesheet" href="{{asset('css/korpa.css')}}">
+<title>Korpa</title>
 @endsection
 
 
@@ -10,28 +10,62 @@
 @section('content')
 
 
+    @if(session('korpa-uklonjeno-message'))
+      <div class="alert alert-success">
+        {{Session::get('korpa-uklonjeno-message')}}
+      </div>
+    @endif
 
-@if($products)
-  @foreach($products as $product)
 
-  <div class="gallery">
-    <div class="slike">
-      <a target="_blank" href="#">
-        <img src="/images/{{$product->photo ? $product->photo : 'plejsholder.png'}}" alt="Forest" width="600" height="400">
-      </a>
-      <div class="desc_name">{{$product->name}}</div>
-      <div class="desc_name">{{substr($product->description, 0, 20).'...'}}</div>
-      <div class="price">{{$product->price}}€</div>
-      <form class="dugme_dodaj_korpu" action="" method="post">
-        @csrf
-        @method('')
-        <button class="btn btn-primary btn-sm" type="submit">Dodaj u korpu</button>
-      </form>
-    </div>
+  <div class="tabela">
+  @if(session('korpa'))
+
+
+
+    <table class="table " cellspacing="0">
+      <thead>
+        <tr>
+          <th>Ime</th>
+          <th>Opis</th>
+          <th>Slika</th>
+          <th>Cijena</th>
+          <th>Kolicina</th>
+          <th>Ukloni</th>
+        </tr>
+      </thead>
+      <tbody>
+      @foreach($products as $product)
+        @foreach($korpa as $item)
+          @if($item == $product->id)
+            <tr>
+              <td>{{$product->name}}</td>
+              <td>{{substr($product->description, 0, 20). '...'}}</td>
+              <td><img width="100" height="auto" src="/images/{{$product->photo ? $product->photo : 'plejsholder.png'}}" alt="Sljika" ></td>
+              <td>{{$product->price}}€</td>
+              <td>1</td>
+              <td>
+              <form class="" action="" method="post">
+                @csrf
+                @method('')
+                <button class="btn btn-danger" type="submit">X</button>
+              </form>
+              </td>
+            </tr>
+          @endif
+        @endforeach
+      @endforeach
+      </tbody>
+    </table>
+    <form class="" action="{{route('uklonikorpasve')}}" method="post">
+      @csrf
+      <button class="uklonisve_dugme btn btn-danger btn-lg" type="submit">Ukloni sve</button>
+    </form>
+  @else
+  <h1 class="text-center">Prazna korpa</h1>
+  @endif
+
+
   </div>
-
-  @endforeach
-@endif
 
 
 

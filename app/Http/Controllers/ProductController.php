@@ -34,12 +34,7 @@ class ProductController extends Controller
     {
       return view('products.kontakt');
     }
-    public function viewkorpa()
-    {
-      
-      return view('products.korpa');
-    }
-
+  
 
     /**
      * Show the form for creating a new resource.

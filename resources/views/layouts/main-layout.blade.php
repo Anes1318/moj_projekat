@@ -60,6 +60,7 @@
           @yield('content')
         </div>
       </main>
+
       <footer>
           <div class="footer-container">
             <img class="footer_logo" src="{{asset('images/sajt/logo.png')}}" alt="LOGO">
