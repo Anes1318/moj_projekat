@@ -4,27 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use App\Models\Korpa;
+use App\Models\Cart;
 use App\Models\Product;
 
 class KorpaController extends Controller
 {
   public function viewkorpa()
   {
-
-    $products = Product::all();
-    $korpa = request()->session()->get('korpa');
-
-    return view('products.korpa', compact('products', 'korpa'));
+    if(!Session::has('cart')){
+      return view('products.korpa');
+    }
+    $oldCart = Session::get('cart');
+    $cart = new Cart($oldCart);
+    return view('products.korpa', ['products' => $cart -> items, 'totalPrice' => $cart -> totalPrice]);
   }
   public function dodajkorpa(Request $request)
   {
-    $korpa = request()->korpa;
-    // $product = Product::findOrFail($id);
-
-    Session::push('korpa', $korpa);
-    // dd(session()->all());
-    Session::flash('productKorpa-added-message', 'Uspjesno dodato u korpu!');
+    $id = $request->id;
+    $product = Product::findOrFail($id);
+    $oldCart = Session::has('cart') ? Session::get('cart') : null;
+    $cart = new Cart($oldCart);
+    $cart->add($product, $product->id);
+    $request->session()->put('cart', $cart);
+    // dd($request->session()->get('cart'));
     return back();
   }
   public function smanji(Request $request)

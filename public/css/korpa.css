@@ -5,6 +5,30 @@
 .tabela{
   margin-top: 50px;
 }
+.dolje{
+  position: relative;
+}
 .uklonisve_dugme{
   margin-left: 10vw;
+
+}
+.ukupno{
+  margin-left: 52vw;
+  position: absolute;
+  bottom: 0px;
+}
+.plus_minut_dugmad{
+  position: relative;
+}
+.plus_dugme{
+  
+  margin-left: 1vw;
+  position: absolute;
+  bottom: 0px;
+}
+.minus_dugme{
+  
+  margin-left: 3vw;
+  position: absolute;
+  bottom: 0px;
 }

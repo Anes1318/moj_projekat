@@ -32,7 +32,8 @@
               </form>
               <form class="svi_artikli_dugme" action="{{route('viewkorpa')}}" method="get">
                 @csrf
-                <button class="btn btn-primary btn-lg" type="submit">Korpa</button>
+                <button class="btn btn-primary btn-lg" type="submit">Korpa <span class="badge badge-secondary badge-light">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span></button>
+
               </form>
               @else
               <form class="create_dugme" action="{{route('login')}}" method="get">

@@ -32,7 +32,7 @@
       <div class="price">{{$product->price}}€</div>
       <form class="dugme_dodaj_korpu" action="{{route('dodajkorpa')}}" method="post">
         @csrf
-        <input type="hidden" name="korpa" value="{{$product->id}}">
+        <input type="hidden" name="id" value="{{$product->id}}">
         <button class="btn btn-primary btn-sm" type="submit">Dodaj u korpu</button>
       </form>
     </div>

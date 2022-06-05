@@ -18,7 +18,7 @@
 
 
   <div class="tabela">
-  @if(session('korpa'))
+  @if(Session::has('cart'))
 
 
 
@@ -35,31 +35,46 @@
       </thead>
       <tbody>
       @foreach($products as $product)
-        @foreach($korpa as $item)
-          @if($item == $product->id)
-            <tr>
-              <td>{{$product->name}}</td>
-              <td>{{substr($product->description, 0, 20). '...'}}</td>
-              <td><img width="100" height="auto" src="/images/{{$product->photo ? $product->photo : 'plejsholder.png'}}" alt="Sljika" ></td>
-              <td>{{$product->price}}€</td>
-              <td>1</td>
-              <td>
-              <form class="" action="" method="post">
+        <tr>
+          <td>{{$product['item']['name']}}</td>
+          <td>{{substr($product['item']['description'], 0, 20). '...'}}</td>
+          <td><img width="100" height="auto" src="/images/{{$product['item']['photo'] ? $product['item']['photo'] : 'plejsholder.png'}}" alt="Sljika" ></td>
+          <td>{{$product['item']['price']}}€</td>
+          <td>{{$product['qty']}}
+            <div class="plus_minut_dugmad">
+              <form class="plus_dugme" action="{{route('dodajkorpa')}}" method="post">
+                @csrf
+                <input type="hidden" name="id" value="{{$product['item']['id']}}">
+                <button class="border border-success btn-sm" type="submit">+</button>
+              </form>
+              <form class="minus_dugme" action="" method="post">
                 @csrf
                 @method('')
-                <button class="btn btn-danger" type="submit">X</button>
+                <button class="border border-danger btn-sm" type="submit">-</button>
               </form>
-              </td>
-            </tr>
-          @endif
-        @endforeach
+            </div>
+          </td>
+          <td>
+          <form class="" action="" method="post">
+            @csrf
+            @method('')
+            <button class="btn btn-danger" type="submit">X</button>
+          </form>
+          </td>
+        </tr>
       @endforeach
       </tbody>
     </table>
-    <form class="" action="{{route('uklonikorpasve')}}" method="post">
-      @csrf
-      <button class="uklonisve_dugme btn btn-danger btn-lg" type="submit">Ukloni sve</button>
-    </form>
+    <hr style="width:80%;">
+    <div class="dolje">
+      <form class="" action="{{route('uklonikorpasve')}}" method="post">
+        @csrf
+        <button class="uklonisve_dugme btn btn-danger btn-lg" type="submit">Ukloni sve</button>
+        <h3 class="ukupno">Ukupno:{{$totalPrice}}€</h3>
+      </form>
+    </div>
+
+
   @else
   <h1 class="text-center">Prazna korpa</h1>
   @endif
