@@ -47,17 +47,17 @@
                 <input type="hidden" name="id" value="{{$product['item']['id']}}">
                 <button class="border border-success btn-sm" type="submit">+</button>
               </form>
-              <form class="minus_dugme" action="" method="post">
+              <form class="minus_dugme" action="{{route('smanji')}}" method="post">
                 @csrf
-                @method('')
+                <input type="hidden" name="id" value="{{$product['item']['id']}}">
                 <button class="border border-danger btn-sm" type="submit">-</button>
               </form>
             </div>
           </td>
           <td>
-          <form class="" action="" method="post">
+          <form class="" action="{{route('ukloniItem')}}" method="post">
             @csrf
-            @method('')
+            <input type="hidden" name="id" value="{{$product['item']['id']}}">
             <button class="btn btn-danger" type="submit">X</button>
           </form>
           </td>

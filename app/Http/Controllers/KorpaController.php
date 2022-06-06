@@ -26,12 +26,29 @@ class KorpaController extends Controller
     $cart = new Cart($oldCart);
     $cart->add($product, $product->id);
     $request->session()->put('cart', $cart);
-    // dd($request->session()->get('cart'));
+    Session::flash('cart-added-message', 'Uspjesno dodano u korpu!');
     return back();
   }
   public function smanji(Request $request)
   {
-
+    
+    $id = $request->id;
+    $product = Product::findOrFail($id);
+    $oldCart = Session::has('cart') ? Session::get('cart') : null;
+    $cart = new Cart($oldCart);
+    $cart->smanji($product, $product->id);
+    $request->session()->put('cart', $cart);
+    Session::flash('cart-removed-message', 'Uspjesno uklonjeno iz korpe!');
+    return back();
+  }
+  public function ukloniItem(Request $request)
+  {
+    $id = $request->id;
+    $oldCart = Session::has('cart') ? Session::get('cart') : null;
+    $cart = new Cart($oldCart);
+    $cart->removeItem($id);
+    $request->session()->put('cart', $cart);
+    return back();
   }
   public function uklonikorpasve()
   {

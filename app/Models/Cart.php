@@ -32,5 +32,26 @@ class Cart
     $this->totalQty++;
     $this->totalPrice += $item->price;
   }
+  public function smanji($item, $id)
+  {
+    $storedItem = ['qty' => $item, 'price' => $item->price, 'item' => $item];
+
+
+
+    if($this->items[$id]['qty'] > 1){
+      ($this->items[$id])['qty']--;
+      $this->totalQty--;
+      $this->totalPrice -= $item->price;
+    }
+
+  }
+
+  public function removeItem($id)
+  {
+
+    $this->totalPrice -=  $this->items[$id]['price'];
+    $this->totalQty -= $this->items[$id]['qty'];
+    unset($this->items[$id]);
+  }
 
 }

@@ -10,9 +10,9 @@
 @section('content')
 
 
-  @if(session('productKorpa-added-message'))
+  @if(session('cart-added-message'))
   <div class="sesija alert alert-success">
-    {{Session::get('productKorpa-added-message')}}
+    {{Session::get('cart-added-message')}}
     <form class="dodajkorpa_session_dugme" action="{{route('viewkorpa')}}" method="get">
       @csrf
       <button class="btn btn-primary" type="submit">Poseti korpu</button>

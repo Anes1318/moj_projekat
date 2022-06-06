@@ -29,6 +29,8 @@ Route::get('/artikli', [App\Http\Controllers\ProductController::class, 'artikli'
 Route::get('/viewkorpa', [App\Http\Controllers\KorpaController::class, 'viewkorpa'])->name('viewkorpa');
 Route::post('/dodajkorpa', [App\Http\Controllers\KorpaController::class, 'dodajkorpa'])->name('dodajkorpa');
 Route::post('/uklonikorpasve', [App\Http\Controllers\KorpaController::class, 'uklonikorpasve'])->name('uklonikorpasve');
+Route::post('/smanji', [App\Http\Controllers\KorpaController::class, 'smanji'])->name('smanji');
+Route::post('/ukloniItem', [App\Http\Controllers\KorpaController::class, 'ukloniItem'])->name('ukloniItem');
 
 
 Route::get('/kontakt', [App\Http\Controllers\ProductController::class, 'kontakt'])->name('kontakt');
